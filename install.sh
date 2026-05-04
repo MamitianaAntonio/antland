@@ -34,6 +34,13 @@ for dir in "${configs[@]}"; do
   echo "  ✓ $dir"
 done
 
+# grant scripts
+chmod +x "$DOTFILES/waybar/scripts/waybar-theme-toggle.sh"
+
+# Waybar theme — dark as default
+cp "$DOTFILES/waybar/style-dark.css" "$CONFIG/waybar/style.css"
+echo "  ✓ waybar theme set to dark"
+
 # Wallpapers
 rm -rf "$HOME/Pictures/wallpaper"
 ln -s "$DOTFILES/wallpapers" "$HOME/Pictures/wallpaper"

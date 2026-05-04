@@ -12,3 +12,4 @@ rofi/cache/
 *~
 *.swp
 waypaper/config.ini
+waybar/style.css
