@@ -15,8 +15,9 @@
   "modules-left": [
     "custom/logo",
     "custom/sep",
-    "hyprland/window",
     "hyprland/workspaces",
+    "custom/sep",
+    "hyprland/window",
     "mpris"
   ],
 
