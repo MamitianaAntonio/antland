@@ -1,0 +1,13 @@
+# auto generated files by hyprland
+hypr/*.log
+hypr/hyprpm/
+hypr/.hyprpm/
+
+# Cache
+waybar/cache/
+rofi/cache/
+
+# Système
+.DS_Store
+*~
+*.swp

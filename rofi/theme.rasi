@@ -1,0 +1,117 @@
+* {
+  bg0:     rgba(17, 17, 27, 90%);
+  bg1:     rgba(30, 30, 46, 85%);
+  bg2:     rgba(49, 50, 68, 100%);
+  accent:  #89b4fa;
+  urgent:  #f38ba8;
+  fg0:     #cdd6f4;
+  fg1:     #a6adc8;
+  fg2:     #585b70;
+
+  background-color: transparent;
+  text-color:       @fg0;
+  border-color:     @accent;
+}
+
+window {
+  background-color: @bg0;
+  border:           1px;
+  border-color:     rgba(137, 180, 250, 0.15);
+  border-radius:    5px;
+  width:            750px;
+  padding:          12px;
+  x-offset:         0;
+  y-offset:         0;
+  location:         center;
+}
+
+mainbox {
+  background-color: transparent;
+  spacing:          8px;
+  children:         [ inputbar, listview ];
+}
+
+/* ───────── SEARCH ───────── */
+inputbar {
+  background-color: @bg1;
+  border-radius:    10px;
+  padding:          8px 12px;
+  spacing:          8px;
+  children:         [ prompt, entry ];
+}
+
+prompt {
+  background-color: transparent;
+  text-color:       @accent;
+  font:             "Lexend 13";
+}
+
+entry {
+  background-color: transparent;
+  text-color:       @fg0;
+  placeholder:      "Search...";
+  placeholder-color: @fg2;
+  cursor:           text;
+}
+
+/* ───────── LISTE ───────── */
+listview {
+  background-color: transparent;
+  columns:          1;
+  lines:            8;
+  spacing:          3px;
+  scrollbar:        false;
+  fixed-height:     false;
+}
+
+element {
+  background-color: transparent;
+  border-radius:    8px;
+  padding:          7px 10px;
+  spacing:          10px;
+  orientation:      horizontal;
+  children:         [ element-icon, element-text ];
+  cursor:           pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+  background-color: transparent;
+  text-color:       @fg0;
+}
+
+element selected.normal {
+  background-color: @bg2;
+  text-color:       @fg0;
+}
+
+element normal.urgent,
+element alternate.urgent {
+  text-color: @urgent;
+}
+
+element selected.urgent {
+  background-color: rgba(243, 139, 168, 0.15);
+  text-color:       @urgent;
+}
+
+element-icon {
+  size:             22px;
+  cursor:           inherit;
+}
+
+element-text {
+  background-color: transparent;
+  text-color:       inherit;
+  cursor:           inherit;
+  vertical-align:   0.5;
+}
+
+/* ───────── SCROLLBAR ───────── */
+scrollbar {
+  background-color: @bg1;
+  handle-color:     @bg2;
+  handle-width:     4px;
+  border-radius:    4px;
+  width:            4px;
+}

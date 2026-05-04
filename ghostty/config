@@ -1,0 +1,18 @@
+# Font
+font-family = "Mononoki Nerd Font"
+font-size = 13
+
+# Cursor
+cursor-style = block
+
+# Window
+window-padding-x = 10
+window-padding-y = 10
+
+# Colors
+theme = Catppuccin Mocha
+
+# Cursor colors
+cursor-color = #528bff
+cursor-text = #282c34
+

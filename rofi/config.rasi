@@ -1,0 +1,13 @@
+configuration {
+  modi:                "drun";
+  show-icons:          true;
+  icon-theme:          "Adwaita";
+  drun-display-format: "{name}";
+  display-drun:        "";
+  font:                "mono 12";
+  hover-select:        true;
+  me-select-entry:     "";
+  me-accept-entry:     "MousePrimary";
+}
+
+@theme "~/.config/rofi/theme.rasi"
