@@ -11,3 +11,5 @@ rofi/cache/
 .DS_Store
 *~
 *.swp
+waypaper/config.ini
+waybar/style.css
