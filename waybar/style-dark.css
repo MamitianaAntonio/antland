@@ -1,0 +1,110 @@
+/* ───────── GLOBAL ───────── */
+* {
+  font-family: "Mononoki Nerd Font Propo";
+  font-size: 14px;
+  font-weight: 600;
+}
+/* ───────── BAR ───────── */
+window#waybar {
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  padding: 1px;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+/* ───────── MODULE BASE ───────── */
+#clock,
+#window,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#mpris,
+#custom-theme,
+#custom-logo,
+#custom-power,
+#tray {
+  padding: 0.3rem 0.85rem;
+  margin: 0.3rem 0.25rem;
+  border-radius: 10px;
+  background-color: rgba(18, 20, 28, 0.92);
+  color: #cdd6f4;
+  border: 1px solid rgba(49, 55, 75, 0.80);
+  transition: all 0.2s ease;
+}
+/* ───────── HOVER GLOBAL ───────── */
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#custom-theme:hover,
+#custom-power:hover,
+#window:hover,
+#tray:hover {
+  background-color: rgba(137, 180, 250, 0.12);
+  border-color: rgba(137, 180, 250, 0.35);
+}
+/* ───────── WORKSPACES ───────── */
+#workspaces button {
+  padding: 0.25rem 0.9rem;
+  margin: 0.35rem 0.25rem;
+  border-radius: 5px;
+  background-color: rgba(18, 20, 28, 0.92);
+  color: #7f849c;
+  border: 1px solid rgba(49, 55, 75, 0.80);
+  transition: all 0.2s ease;
+}
+#workspaces button:hover {
+  background-color: rgba(137, 180, 250, 0.12);
+  color: #cdd6f4;
+}
+/* active */
+#workspaces button.active {
+  background-color: rgba(137, 180, 250, 0.20);
+  color: #89b4fa;
+  border-color: rgba(137, 180, 250, 0.55);
+}
+#workspaces button.urgent {
+  background-color: rgba(243, 139, 168, 0.15);
+  color: #f38ba8;
+  border-color: rgba(243, 139, 168, 0.45);
+}
+/* ───────── TRAY ───────── */
+#tray {
+  padding: 0.25rem 0.6rem;
+}
+#tray > widget {
+  margin: 0 0.2rem;
+}
+/* ───────── COLORS ───────── */
+#cpu        { color: #a6e3a1; }
+#memory     { color: #94e2d5; }
+#network    { color: #89dceb; }
+#pulseaudio { color: #cba6f7; }
+#battery    { color: #f9e2af; }
+#clock      { color: #89b4fa; }
+#custom-logo  { color: #b4befe; }
+#custom-power { color: #f38ba8; }
+/* ───────── MPRIS ───────── */
+#mpris {
+  color: #cba6f7;
+  font-style: italic;
+  opacity: 0.9;
+}
+/* ───────── SEPARATOR ───────── */
+#custom-sep {
+  color: rgba(18, 20, 28, 0.92);
+  opacity: 0.3;
+  padding: 0 6px;
+}
+/* ───────── TOOLTIP ───────── */
+tooltip {
+  border-radius: 10px;
+  border: 1px solid rgba(49, 55, 75, 0.90);
+  background-color: rgba(24, 24, 37, 0.97);
+  color: #cdd6f4;
+}
