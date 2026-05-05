@@ -1,117 +1,184 @@
 * {
-  bg0:     rgba(17, 17, 27, 90%);
-  bg1:     rgba(30, 30, 46, 85%);
-  bg2:     rgba(49, 50, 68, 100%);
-  accent:  #89b4fa;
-  urgent:  #f38ba8;
-  fg0:     #cdd6f4;
-  fg1:     #a6adc8;
-  fg2:     #585b70;
-
-  background-color: transparent;
-  text-color:       @fg0;
-  border-color:     @accent;
+    font:               "Mononoki Nerd Font Mono 12";
+    bg0:                #1e2230e8;
+    bg1:                #252936f0;
+    bg-selected:        #88C0D020;
+    accent-color:       #88C0D0;
+    accent-dim:         #88C0D035;
+    urgent-color:       #EBCB8B;
+    active-color:       #A3BE8C;
+    fg0:                #D8DEE9;
+    fg1:                #8892a4;
+    fg2:                #4C566A;
+    background-color:   transparent;
+    text-color:         @fg0;
+    margin:             0;
+    padding:            0;
+    spacing:            0;
 }
 
 window {
-  background-color: @bg0;
-  border:           1px;
-  border-color:     rgba(137, 180, 250, 0.15);
-  border-radius:    5px;
-  width:            750px;
-  padding:          12px;
-  x-offset:         0;
-  y-offset:         0;
-  location:         center;
+    transparency:       "real";
+    location:           center;
+    width:              750px;
+    background-color:   @bg0;
+    border-radius:      4px;
+    padding:            0;
+    cursor:             "default";
 }
 
 mainbox {
-  background-color: transparent;
-  spacing:          8px;
-  children:         [ inputbar, listview ];
+    background-color:   transparent;
+    padding:            16px;
+    spacing:            10px;
+    children:           [ inputbar, message, listview, mode-switcher ];
 }
 
-/* ───────── SEARCH ───────── */
 inputbar {
-  background-color: @bg1;
-  border-radius:    10px;
-  padding:          8px 12px;
-  spacing:          8px;
-  children:         [ prompt, entry ];
+    background-color:   @bg1;
+    border-radius:      4px;
+    padding:            10px 14px;
+    spacing:            6px;
+    children:           [ prompt, textbox-prompt-colon, entry ];
 }
 
 prompt {
-  background-color: transparent;
-  text-color:       @accent;
-  font:             "Lexend 13";
+    background-color:   transparent;
+    text-color:         @accent-color;
+    horizontal-align:   0;
+}
+
+textbox-prompt-colon {
+    background-color:   transparent;
+    text-color:         @fg2;
+    str:                "│";
+    expand: false;
 }
 
 entry {
-  background-color: transparent;
-  text-color:       @fg0;
-  placeholder:      "Search...";
-  placeholder-color: @fg2;
-  cursor:           text;
+    background-color:   transparent;
+    text-color:         @fg0;
+    placeholder:        "Search...";
+    placeholder-color:  @fg2;
+    cursor:             text;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
 }
 
-/* ───────── LISTE ───────── */
+prompt, element-icon, element-text {
+    vertical-align:     0.5;
+}
+
 listview {
-  background-color: transparent;
-  columns:          1;
-  lines:            8;
-  spacing:          3px;
-  scrollbar:        false;
-  fixed-height:     false;
+    background-color:   transparent;
+    padding:            4px 0;
+    spacing:            3px;
+    lines:              8;
+    columns:            1;
+    fixed-height:       false;
+    scrollbar:          true;
+}
+
+scrollbar {
+    width:              3px;
+    handle-width:       3px;
+    handle-color:       @accent-dim;
+    background-color:   transparent;
+    border-radius:      8px;
 }
 
 element {
-  background-color: transparent;
-  border-radius:    8px;
-  padding:          7px 10px;
-  spacing:          10px;
-  orientation:      horizontal;
-  children:         [ element-icon, element-text ];
-  cursor:           pointer;
+    background-color:   transparent;
+    text-color:         @fg0;
+    border-radius:      8px;
+    padding:            9px 12px;
+    spacing:            10px;
+    cursor:             pointer;
 }
 
-element normal.normal,
-element alternate.normal {
-  background-color: transparent;
-  text-color:       @fg0;
+element normal normal {
+    background-color:   transparent;
+    text-color:         @fg0;
 }
 
-element selected.normal {
-  background-color: @bg2;
-  text-color:       @fg0;
+element normal urgent {
+    background-color:   transparent;
+    text-color:         @urgent-color;
 }
 
-element normal.urgent,
-element alternate.urgent {
-  text-color: @urgent;
+element normal active {
+    background-color:   transparent;
+    text-color:         @active-color;
 }
 
-element selected.urgent {
-  background-color: rgba(243, 139, 168, 0.15);
-  text-color:       @urgent;
+element alternate normal {
+    background-color:   transparent;
+    text-color:         @fg0;
+}
+
+element alternate urgent {
+    background-color:   transparent;
+    text-color:         @urgent-color;
+}
+
+element alternate active {
+    background-color:   transparent;
+    text-color:         @active-color;
+}
+
+element selected normal {
+    background-color:   @bg-selected;
+    text-color:         @accent-color;
+}
+
+element selected urgent {
+    background-color:   #EBCB8B18;
+    text-color:         @urgent-color;
+}
+
+element selected active {
+    background-color:   #A3BE8C18;
+    text-color:         @active-color;
 }
 
 element-icon {
-  size:             22px;
-  cursor:           inherit;
+    background-color:   transparent;
+    size:               1em;
+    cursor:             inherit;
 }
 
 element-text {
-  background-color: transparent;
-  text-color:       inherit;
-  cursor:           inherit;
-  vertical-align:   0.5;
+    background-color:   transparent;
+    text-color:         inherit;
+    cursor:             inherit;
+    vertical-align:     0.5;
 }
 
-/* ───────── SCROLLBAR ───────── */
-scrollbar {
-  background-color: @bg1;
-  handle-color:     @bg2;
-  handle-width:     4px;
-  border-radius:    4px;
-  width:            4px;
+mode-switcher {
+    background-color:   transparent;
+    padding-top:        10px;
+    spacing:            6px;
+}
+
+button {
+    background-color:   transparent;
+    text-color:         @fg2;
+    padding:            5px 12px;
+    cursor:             pointer;
+}
+
+button selected {
+    background-color:   @bg-selected;
+    text-color:         @accent-color;
+}
+
+message {
+    background-color:   transparent;
+}
+
+textbox {
+    background-color:   @bg1;
+    text-color:         @fg1;
+    border-radius:      6px;
+    padding:            8px 12px;
 }
