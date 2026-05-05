@@ -9,7 +9,7 @@ Make sure you are on **Fedora** or **Arch Linux** with **Hyprland** installed an
 ### Arch Linux
 
 ```bash
-sudo pacman -S hyprland waybar rofi ghostty fish neovim cava swww waypaper hyprlock wlogout mako nautilus grim wl-clipboard network-manager-applet pavucontrol btop
+sudo pacman -S hyprland waybar rofi ghostty fish neovim cava swww waypaper hyprlock wlogout mako nautilus grim wl-clipboard network-manager-applet pavucontrol btop swayosd
 ```
 
 #### AUR packages
@@ -22,7 +22,7 @@ yay -S hyprpanel nwg-look nwg-displays fastfetch
 ### Fedora
 
 ```bash
-sudo dnf install hyprland waybar rofi fish neovim cava swww hyprlock mako nautilus grim wl-clipboard network-manager-applet pavucontrol btop fastfetch
+sudo dnf install hyprland waybar rofi fish neovim cava swww hyprlock mako nautilus grim wl-clipboard network-manager-applet pavucontrol btop fastfetch swayosd
 ```
 
 #### Copr packages (equivalent of AUR on Fedora)

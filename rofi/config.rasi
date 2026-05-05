@@ -1,13 +1,33 @@
 configuration {
-  modi:                "drun";
-  show-icons:          true;
-  icon-theme:          "Adwaita";
-  drun-display-format: "{name}";
-  display-drun:        "";
-  font:                "mono 12";
-  hover-select:        true;
-  me-select-entry:     "";
-  me-accept-entry:     "MousePrimary";
+    /* --- Available Modi --- */
+    modi:                       "run,drun,window,filebrowser";
+    display-drun:               " Apps";
+    display-run:                " Run";
+    display-window:             " Windows";
+    display-filebrowser:        " Files";
+
+    /* --- font --- */
+    font:                       "JetBrains Mono 12";
+
+    /* --- Icon --- */
+    show-icons:                 true;
+    icon-theme:                 "Papirus-Dark";
+    drun-display-format:        "{name}";
+
+    /* --- Behaviour --- */
+    lines:                      6;
+    fixed-num-lines:            true;
+    sort:                       true;
+    sorting-method:             "fzf";
+    case-sensitive:             false;
+    cycle:                      true;
+    sidebar-mode:               false;
+    hover-select:               false;
+    auto-select:                false;
+    scroll-method:              0;
+
+    /* shorcut*/
+    kb-mode-next:       "Alt+Tab";
 }
 
-@theme "~/.config/rofi/theme.rasi"
+@theme "theme"
